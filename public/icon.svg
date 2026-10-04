@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080e1a" />
+      <stop offset="50%" stop-color="#0c172a" />
+      <stop offset="100%" stop-color="#140a2b" />
+    </linearGradient>
+
+    <!-- Turquoise to Violet Brand Gradient -->
+    <linearGradient id="brandGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="35%" stop-color="#14b8a6" />
+      <stop offset="70%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+
+    <!-- Orbit 1 Gradient (Turquoise dominant) -->
+    <linearGradient id="orbit1Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee" />
+      <stop offset="50%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+
+    <!-- Orbit 2 Gradient (Violet dominant) -->
+    <linearGradient id="orbit2Grad" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc" />
+      <stop offset="50%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+
+    <!-- Glowing Core Glow Filter -->
+    <filter id="coreGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" result="blur1" />
+      <feGaussianBlur stdDeviation="24" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="blur1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <radialGradient id="nucleusGrad" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="30%" stop-color="#67e8f9" />
+      <stop offset="70%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#7c3aed" />
+    </radialGradient>
+
+    <radialGradient id="electronGrad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="40%" stop-color="#a5f3fc" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </radialGradient>
+  </defs>
+
+  <!-- Squircle / Rounded App Icon Container for Android -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)" />
+  <rect width="510" height="510" x="1" y="1" rx="111" fill="none" stroke="url(#brandGrad)" stroke-width="2" stroke-opacity="0.3" />
+
+  <!-- Center Group Safe Zone (Inside 80% circle) -->
+  <g transform="translate(256, 256)">
+    <!-- Background subtle halo -->
+    <circle r="130" fill="url(#brandGrad)" opacity="0.08" filter="url(#coreGlow)" />
+
+    <!-- Left Leg Orbit forming Left side of 'A' (tilted -28 deg) -->
+    <ellipse rx="72" ry="176" transform="rotate(-28)" fill="none" stroke="url(#orbit1Grad)" stroke-width="16" stroke-linecap="round" stroke-dasharray="1000" opacity="0.95" />
+
+    <!-- Right Leg Orbit forming Right side of 'A' (tilted +28 deg) -->
+    <ellipse rx="72" ry="176" transform="rotate(28)" fill="none" stroke="url(#orbit2Grad)" stroke-width="16" stroke-linecap="round" stroke-dasharray="1000" opacity="0.95" />
+
+    <!-- Horizontal Orbit crossing to form the bar of 'A' -->
+    <ellipse rx="145" ry="46" transform="translate(0, 32)" fill="none" stroke="url(#brandGrad)" stroke-width="11" stroke-linecap="round" opacity="0.8" />
+
+    <!-- Core Glowing Nucleus -->
+    <circle r="34" fill="url(#nucleusGrad)" filter="url(#coreGlow)" />
+    <circle r="14" fill="#ffffff" opacity="0.85" />
+
+    <!-- Orbiting Electron on top-right orbit leg -->
+    <g transform="translate(86, -72)">
+      <circle r="15" fill="url(#electronGrad)" filter="url(#coreGlow)" />
+      <circle r="6" fill="#ffffff" />
+    </g>
+
+    <!-- Secondary mini electron on bottom-left orbit -->
+    <g transform="translate(-104, 82)">
+      <circle r="10" fill="#c084fc" filter="url(#coreGlow)" />
+      <circle r="4" fill="#ffffff" />
+    </g>
+  </g>
+</svg>

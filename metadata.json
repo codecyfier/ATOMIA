@@ -1,0 +1,6 @@
+{
+  "name": "Atomia - Chimie Interactive & Pédagogique",
+  "description": "Application web de chimie complète en français : tableau périodique 118 éléments, visualiseur 3D, équilibreur de réactions, laboratoire virtuel, calculatrices, cours, quiz et assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

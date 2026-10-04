@@ -1,0 +1,26 @@
+{
+  "id": "/",
+  "name": "Atomia - Chimie Interactive",
+  "short_name": "Atomia",
+  "description": "Application web de chimie complète : tableau périodique 118 éléments, 3D, équilibres, labo virtuel, calculatrices et quiz.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#080e1a",
+  "theme_color": "#080e1a",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}
